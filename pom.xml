@@ -13,7 +13,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <aspectj.version>1.8.9</aspectj.version>
+        <aspectj.version>1.8.7</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>1.4.0.RELEASE</spring-boot.version>
         <spring-cloud.version>Brixton.SR4</spring-cloud.version>
@@ -592,7 +592,7 @@
             </snapshots>
             <id>public</id>
             <name>Maven 2 Repository (Releases)</name>
-            <url>http://192.168.30.58:8081/nexus/content/groups/public</url>
+            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> <!-- Aliyun maven repository -->
             <layout>default</layout>
         </repository>
         <repository>
@@ -606,7 +606,8 @@
             <id>snapshots</id>
             <name>Maven 2 Repository (Snapshots)</name>
             <!--<url>http://172.16.30.71:8081/nexus/content/groups/public-snapshots/</url>-->
-            <url>http://192.168.30.58:8081/nexus/content/groups/public</url>
+            <!--<url>http://192.168.30.58:8081/nexus/content/groups/public</url>-->
+            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> <!-- Aliyun maven repository -->
             <layout>default</layout>
         </repository>
         <!--Temporary Spring Cloud Consul repository ！TO BE DEPRECATED-->
