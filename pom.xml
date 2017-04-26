@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hjimi</groupId>
+    <groupId>com.keets</groupId>
     <artifactId>cloud-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
@@ -542,7 +542,7 @@
         </plugins>
         <pluginManagement>
             <plugins>
-                <plugin>
+               <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot.version}</version>
@@ -614,7 +614,7 @@
         </profile>
     </profiles>
     <repositories>
-        <repository>
+        <!--<repository>
             <releases>
                 <enabled>true</enabled>
                 <checksumPolicy>fail</checksumPolicy>
@@ -624,7 +624,7 @@
             </snapshots>
             <id>public</id>
             <name>Maven 2 Repository (Releases)</name>
-            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> <!-- Aliyun maven repository -->
+            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> &lt;!&ndash; Aliyun maven repository &ndash;&gt;
             <layout>default</layout>
         </repository>
         <repository>
@@ -637,11 +637,11 @@
             </snapshots>
             <id>snapshots</id>
             <name>Maven 2 Repository (Snapshots)</name>
-            <!--<url>http://172.16.30.71:8081/nexus/content/groups/public-snapshots/</url>-->
-            <!--<url>http://192.168.30.58:8081/nexus/content/groups/public</url>-->
-            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> <!-- Aliyun maven repository -->
+            &lt;!&ndash;<url>http://172.16.30.71:8081/nexus/content/groups/public-snapshots/</url>&ndash;&gt;
+            &lt;!&ndash;<url>http://192.168.30.58:8081/nexus/content/groups/public</url>&ndash;&gt;
+            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> &lt;!&ndash; Aliyun maven repository &ndash;&gt;
             <layout>default</layout>
-        </repository>
+        </repository>-->
         <!--Temporary Spring Cloud Consul repository ！TO BE DEPRECATED-->
         <repository>
             <id>spring-snapshots</id>
@@ -673,7 +673,7 @@
         <!--Temporary Spring Cloud Consul repository-->
     </repositories>
 
-    <distributionManagement>
+<!--    <distributionManagement>
         <repository>
             <id>releases</id>
             <name>Nexus Releases Repository</name>
@@ -684,6 +684,6 @@
             <name>Nexus Snapshots Repository</name>
             <url>http://192.168.30.58:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement>-->
 
 </project>
