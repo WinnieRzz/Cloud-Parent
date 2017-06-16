@@ -508,6 +508,7 @@
                     </archive>
                 </configuration>
             </plugin>
+            <!-- docker build plugin -->
             <!-- <plugin>
                  <groupId>com.spotify</groupId>
                  <artifactId>docker-maven-plugin</artifactId>
@@ -623,7 +624,7 @@
         </profile>
     </profiles>
     <repositories>
-        <!--<repository>
+        <repository>
             <releases>
                 <enabled>true</enabled>
                 <checksumPolicy>fail</checksumPolicy>
@@ -633,7 +634,9 @@
             </snapshots>
             <id>public</id>
             <name>Maven 2 Repository (Releases)</name>
-            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> &lt;!&ndash; Aliyun maven repository &ndash;&gt;
+            <url>http://192.168.1.100:8081/artifactory/libs-release</url>
+
+            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- Aliyun maven repository -->
             <layout>default</layout>
         </repository>
         <repository>
@@ -646,11 +649,13 @@
             </snapshots>
             <id>snapshots</id>
             <name>Maven 2 Repository (Snapshots)</name>
-            &lt;!&ndash;<url>http://172.16.30.71:8081/nexus/content/groups/public-snapshots/</url>&ndash;&gt;
-            &lt;!&ndash;<url>http://192.168.30.58:8081/nexus/content/groups/public</url>&ndash;&gt;
-            <url>http://192.168.30.58:8081/nexus/content/repositories/Aliyun/</url> &lt;!&ndash; Aliyun maven repository &ndash;&gt;
+            <!--<url>http://172.16.30.71:8081/nexus/content/groups/public-snapshots/</url>-->
+            <!--<url>http://192.168.30.58:8081/nexus/content/groups/public</url>-->
+            <url>http://192.168.1.100:8081/artifactory/libs-snapshot</url>
+
+            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- Aliyun maven repository -->
             <layout>default</layout>
-        </repository>-->
+        </repository>
         <!--Temporary Spring Cloud Consul repository ！TO BE DEPRECATED-->
         <repository>
             <id>spring-snapshots</id>
@@ -682,17 +687,17 @@
         <!--Temporary Spring Cloud Consul repository-->
     </repositories>
 
-<!--    <distributionManagement>
+    <distributionManagement>
         <repository>
-            <id>releases</id>
-            <name>Nexus Releases Repository</name>
-            <url>http://192.168.30.58:8081/nexus/content/repositories/releases/</url>
+            <id>central</id>
+            <name>simu-server-releases</name>
+            <url>http://192.168.1.100:8081/artifactory/libs-release</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <name>Nexus Snapshots Repository</name>
-            <url>http://192.168.30.58:8081/nexus/content/repositories/snapshots/</url>
+            <name>simu-server-snapshots</name>
+            <url>http://192.168.1.100:8081/artifactory/libs-snapshot</url>
         </snapshotRepository>
-    </distributionManagement>-->
+    </distributionManagement>
 
 </project>
