@@ -61,13 +61,13 @@
     <dependencyManagement>
         <dependencies>
             <!--web content-->
-            <!--            <dependency>
-                            <groupId>org.springframework.boot</groupId>
-                            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-                            <version>${spring-thymeleaf.version}</version>
-                            <type>pom</type>
-                            <scope>import</scope>
-                        </dependency>-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>${spring-thymeleaf.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <!--Spring Cloud-->
             <dependency>
@@ -94,56 +94,58 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--Spring Consul-->
-            <!--DON't import spring-cloud-consul-dependencies!!! it brings spring-cloud-dependencies-parent-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-consul-core</artifactId>
-                <version>${spring.consul.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-consul-binder</artifactId>
-                <version>${spring.consul.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-consul-config</artifactId>
-                <version>${spring.consul.version}</version>
-                <scope>compile</scope>
-            </dependency>
+            <!--old Spring Consul
+          <dependency>
+               <groupId>org.springframework.cloud</groupId>
+               <artifactId>spring-cloud-consul-core</artifactId>
+               <version>${spring.consul.version}</version>
+               <scope>compile</scope>
+           </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-consul-binder</artifactId>
+                    <version>${spring.consul.version}</version>
+                    <scope>compile</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-consul-bus</artifactId>
+                    <version>${spring.consul.version}</version>
+                    <scope>compile</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-consul-config</artifactId>
+                    <version>${spring.consul.version}</version>
+                    <scope>compile</scope>
+                </dependency>
+              <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-consul-config</artifactId>
+                  <version>${spring.consul.version}</version>
+                  <scope>compile</scope>
+              </dependency>-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-consul-discovery</artifactId>
                 <version>${spring.consul.version}</version>
                 <scope>compile</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-consul</artifactId>
                 <version>${spring.consul.version}</version>
                 <scope>compile</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-consul-bus</artifactId>
-                <version>${spring.consul.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-consul-config</artifactId>
-                <version>${spring.consul.version}</version>
-                <scope>compile</scope>
-            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-consul-discovery</artifactId>
                 <version>${spring.consul.version}</version>
                 <scope>compile</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-consul-all</artifactId>
@@ -165,6 +167,7 @@
                 <version>${spring.version}</version>
                 <scope>compile</scope>
             </dependency>
+
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
@@ -517,7 +520,6 @@
                     </archive>
                 </configuration>
             </plugin>
-            <!-- docker build plugin -->
             <!-- <plugin>
                  <groupId>com.spotify</groupId>
                  <artifactId>docker-maven-plugin</artifactId>
@@ -645,7 +647,7 @@
             <name>Maven 2 Repository (Releases)</name>
             <url>http://192.168.1.100:8081/artifactory/libs-release</url>
 
-            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- Aliyun maven repository -->
+            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- private maven repository -->
             <layout>default</layout>
         </repository>
         <repository>
@@ -662,7 +664,7 @@
             <!--<url>http://192.168.30.58:8081/nexus/content/groups/public</url>-->
             <url>http://192.168.1.100:8081/artifactory/libs-snapshot</url>
 
-            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- Aliyun maven repository -->
+            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- private maven repository -->
             <layout>default</layout>
         </repository>
         <!--Temporary Spring Cloud Consul repository ！TO BE DEPRECATED-->
