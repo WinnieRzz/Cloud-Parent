@@ -61,13 +61,13 @@
     <dependencyManagement>
         <dependencies>
             <!--web content-->
-            <dependency>
+<!--            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
                 <version>${spring-thymeleaf.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
+            </dependency>-->
 
             <!--Spring Cloud-->
             <dependency>
@@ -77,15 +77,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- Override Spring Data release train provided by Spring Boot -->
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-releasetrain</artifactId>
-                <version>Fowler-SR2</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-
             <!-- Spring Boot -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -145,14 +136,12 @@
                 <version>${spring.consul.version}</version>
                 <scope>compile</scope>
             </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-consul-all</artifactId>
-                <version>${spring.consul.version}</version>
-                <scope>compile</scope>
-            </dependency>
-
+            <!--            <dependency>
+                            <groupId>org.springframework.cloud</groupId>
+                            <artifactId>spring-cloud-starter-consul-all</artifactId>
+                            <version>${spring.consul.version}</version>
+                            <scope>compile</scope>
+                        </dependency>-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-stream-dependencies</artifactId>
@@ -664,7 +653,7 @@
             <!--<url>http://192.168.30.58:8081/nexus/content/groups/public</url>-->
             <url>http://192.168.1.100:8081/artifactory/libs-snapshot</url>
 
-            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- private maven repository -->
+            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- Aliyun maven repository -->
             <layout>default</layout>
         </repository>
         <!--Temporary Spring Cloud Consul repository ！TO BE DEPRECATED-->
