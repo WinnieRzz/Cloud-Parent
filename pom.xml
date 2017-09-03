@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.superid</groupId>
+    <groupId>cn.aoho</groupId>
     <artifactId>cloud-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.1</version>
+    <version>1.0-SNAPSHOT</version>
 
     <name>Cloud Parent</name>
 
@@ -26,7 +26,7 @@
         <spring.consul.version>1.2.0.RELEASE</spring.consul.version>
         <jackson.version>2.8.1</jackson.version>
         <fastjson.version>1.2.23</fastjson.version>
-        <ts.common.version>338.0.0</ts.common.version>
+        <lombok.version>1.16.16</lombok.version>
         <logback.version>1.1.7</logback.version>
         <slf4j.version>1.7.21</slf4j.version>
         <carbonfive.version>0.9.7</carbonfive.version>
@@ -85,37 +85,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--old Spring Consul
-          <dependency>
-               <groupId>org.springframework.cloud</groupId>
-               <artifactId>spring-cloud-consul-core</artifactId>
-               <version>${spring.consul.version}</version>
-               <scope>compile</scope>
-           </dependency>
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-consul-binder</artifactId>
-                    <version>${spring.consul.version}</version>
-                    <scope>compile</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-consul-bus</artifactId>
-                    <version>${spring.consul.version}</version>
-                    <scope>compile</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.springframework.cloud</groupId>
-                    <artifactId>spring-cloud-starter-consul-config</artifactId>
-                    <version>${spring.consul.version}</version>
-                    <scope>compile</scope>
-                </dependency>
-              <dependency>
-                  <groupId>org.springframework.cloud</groupId>
-                  <artifactId>spring-cloud-consul-config</artifactId>
-                  <version>${spring.consul.version}</version>
-                  <scope>compile</scope>
-              </dependency>-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-consul-discovery</artifactId>
@@ -350,6 +319,14 @@
                 <version>${oval.version}</version>
                 <scope>compile</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
             <dependency>
                 <groupId>de.ruedigermoeller</groupId>
                 <artifactId>fst</artifactId>
@@ -619,39 +596,6 @@
     </profiles>
     <repositories>
         <repository>
-            <releases>
-                <enabled>true</enabled>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>public</id>
-            <name>Maven 2 Repository (Releases)</name>
-            <url>http://192.168.1.100:8081/artifactory/libs-release</url>
-
-            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- private maven repository -->
-            <layout>default</layout>
-        </repository>
-        <repository>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <id>snapshots</id>
-            <name>Maven 2 Repository (Snapshots)</name>
-            <!--<url>http://172.16.30.71:8081/nexus/content/groups/public-snapshots/</url>-->
-            <!--<url>http://192.168.30.58:8081/nexus/content/groups/public</url>-->
-            <url>http://192.168.1.100:8081/artifactory/libs-snapshot</url>
-
-            <!--<url>http://192.168.1.100:8081/nexus/content/repositories/Aliyun/</url> --><!-- Aliyun maven repository -->
-            <layout>default</layout>
-        </repository>
-        <!--Temporary Spring Cloud Consul repository ！TO BE DEPRECATED-->
-        <repository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
             <url>https://repo.spring.io/libs-snapshot-local</url>
@@ -678,20 +622,6 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!--Temporary Spring Cloud Consul repository-->
     </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>simu-server-releases</name>
-            <url>http://192.168.1.100:8081/artifactory/libs-release</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>simu-server-snapshots</name>
-            <url>http://192.168.1.100:8081/artifactory/libs-snapshot</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>
