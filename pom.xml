@@ -57,6 +57,7 @@
         <junit.version>4.12</junit.version>
         <dbunit.version>2.5.3</dbunit.version>
         <consul.api.version>1.2.3</consul.api.version>
+        <mybatis.stater.version>1.2.1</mybatis.stater.version>
     </properties>
 
     <dependencyManagement>
@@ -96,6 +97,13 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-consul-discovery</artifactId>
                 <version>${spring.consul.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.stater.version}</version>
                 <scope>compile</scope>
             </dependency>
 
